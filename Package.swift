@@ -5,11 +5,18 @@ import PackageDescription
 
 let package = Package(
     name: "STKComponents",
+    platforms: [
+        .iOS(.v17)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "STKComponents",
             targets: ["STKComponents"]),
+    ],
+    dependencies: [
+        // External dependencies here with the format as explained bellow
+        // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
