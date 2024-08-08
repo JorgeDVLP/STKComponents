@@ -6,9 +6,11 @@ To install this package, import `https://github.com/JorgeDVLP/STKComponents.git`
 
 ## FloatingTextfield 
 
-Textfield with a floating label which moves up when the user starts typing. The label is set to the accent color of your project when the textfield is being edited.
+Textfield with a floating label which moves up when the user starts editing. 
+The label color change to accent when the textfield is focused. The default unfocused color is gray.
 
-## Usage example
+#### Usage example
+
 
 ```swift
 
@@ -16,7 +18,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-             FloatingTextfield("Username", icon: "person.fill", text: $username)
+            FloatingTextfield("Username", icon: "person.fill", text: $username)
         }
     }
 }
@@ -24,8 +26,21 @@ struct ContentView: View {
 
 ```
 
-There are a few modifiers for configuring the component:
+#### View Modifiers
 
-    .clearButtonHidden(_ hidden: Bool = true) -> enables the textfield clear button
-    .secured(_ secured: Bool = true) -> transform the default textfield into a SecureField
-    .mandatory(_ mandatory: Bool = true) -> mark textfield placeholder with * to indicate that is a mandatory textfield
+Show clear text button
+```swift
+.clearButtonHidden(_ hidden: Bool = true)
+```
+
+Transform the default textfield into a SecureField
+
+```swift
+.secured(_ secured: Bool = true)
+```
+
+Simply mark placeholder text with * to indicate that is a mandatory field
+
+```swift
+.mandatory(_ mandatory: Bool = true)
+```
